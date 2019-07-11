@@ -43,4 +43,7 @@ This file will be written to the working directory.
 '''
 
 from custom.LSPI import PrevDayHourlyAvgDiffTest1
-fn = PrevDayHourlyAvgDiffTest1()
+fn = PrevDayHourlyAvgDiffTest1(
+    input_item = ['deviceid'],
+    output_item = ['output_item']
+)
