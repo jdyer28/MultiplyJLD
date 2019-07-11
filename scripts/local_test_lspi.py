@@ -21,7 +21,7 @@ Place your credentials in a separate file that you don't check into the repo.
 
 '''
 
-with open('../../../creds/credentials_as.json', encoding='utf-8') as F:
+with open('../../../creds/credentials_as_lspi.json', encoding='utf-8') as F:
     credentials = json.loads(F.read())
 db_schema = None
 db = Database(credentials=credentials)
@@ -42,11 +42,5 @@ This file will be written to the working directory.
 
 '''
 
-from custom.multiplyJLD import MultiplyByFactor
-fn = MultiplyByFactor(
-    input_items = ['speed', 'travel_time'],
-    factor = '2',
-    output_items = ['adjusted_speed', 'adjusted_travel_time']
-              )
-df = fn.execute_local_test(generate_days=1,to_csv=True)
-print(df)
+from custom.LSPI import PrevDayHourlyAvgDiffTest1
+fn = PrevDayHourlyAvgDiffTest1()
